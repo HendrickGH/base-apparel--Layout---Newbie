@@ -1,0 +1,198 @@
+/*
+# Front-end Style Guide
+
+## Layout
+
+The designs were created to the following widths:
+
+- Mobile: 375px
+- Desktop: 1440px
+
+## Colors
+
+### Primary
+
+- Desaturated Red: hsl(0, 36%, 70%)
+- Soft Red: hsl(0, 93%, 68%)
+
+### Neutral
+
+- Dark Grayish Red: hsl(0, 6%, 24%)
+
+### Gradients
+
+- Linear, 135deg, from hsl(0, 0%, 100%), to hsl(0, 100%, 98%)
+- Linear, 135deg, from hsl(0, 80%, 86%), to hsl(0, 74%, 74%)
+
+## Typography
+
+### Body Copy
+
+- Font size: 16px
+
+### Font
+
+- Family: [Josefin Sans](https://fonts.google.com/specimen/Josefin+Sans)
+- Weights: 300, 400, 600
+*/
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;600&display=swap');
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+html {
+	font-size: 62.5%;
+}
+body {
+	font-family: 'Josefin Sans', sans-serif;
+	position: relative;
+	background-image: linear-gradient(135deg, #ffffff, #fff5f5);
+}
+.header {
+	position: absolute;
+	transform: translate(150%, 100%);
+}
+.section {
+	width: 100vw;
+	height: 100vh;
+	display: grid;
+	grid-template-columns: 3fr 2fr;
+}
+.container-box-text {
+	display: grid;
+	background-image: url(images/bg-pattern-desktop.svg);
+	background-size: cover;
+}
+.box-text {
+	justify-self: center;
+	align-self: center;
+}
+.container {
+	width: 30rem;
+	display: flex;
+	flex-direction: column;
+	gap: 2.4rem;
+}
+.title {
+	color: #413a3a;
+	font-size: 4.8rem;
+	letter-spacing: 1.2rem;
+	text-transform: uppercase;
+	font-weight: 600;
+}
+.title span {
+	color: #ce9797;
+	font-weight: 300;
+}
+.text {
+	color: #ce9797;
+	font-size: 1.2rem;
+	font-weight: 400;
+	line-height: 1.5;
+	letter-spacing: 0.075px;
+}
+form {
+	position: relative;
+	display: flex;
+}
+.email {
+	flex: 1;
+	padding: 1.2rem 0;
+}
+.email-label,
+.submit,
+.error,
+.msg-error {
+	position: absolute;
+}
+.error,
+.msg-error {
+	display: none;
+}
+.trash .error {
+	display: initial;
+	align-self: center;
+	left: 50%;
+	transform: translateX(150%);
+}
+.trash .msg-error {
+	display: initial;
+	bottom: 0;
+	left: 2.4rem;
+	transform: translateY(200%);
+	color: #ec1c1c;
+	font-size: 1.2rem;
+}
+.email-label {
+	align-self: center;
+	margin-left: 2.4rem;
+	color: #ce9797;
+	font-size: 1.4rem;
+	font-weight: 300;
+	transition: transform, font-size 0.4s;
+}
+.submit {
+	right: 0;
+	top: 0;
+	padding: 0.8rem 3.2rem;
+	border-radius: 10000rem;
+	font-size: 2.4rem;
+	border: none;
+	color: #fff;
+	font-weight: 400;
+	background-image: linear-gradient(135deg, #f8bfbf, #ee8c8c);
+	box-shadow: 0 1rem 1.5rem rgba(248, 191, 191, 0.829);
+	cursor: pointer;
+	transition: background-image 0.6s;
+}
+.submit:hover {
+	background-image: linear-gradient(
+		135deg,
+		rgba(249, 98, 98, 0.171),
+		rgba(249, 98, 98, 0.5)
+	);
+	box-shadow: 0 1rem 2rem 0.2rem rgba(248, 191, 191, 0.829);
+}
+.email {
+	background-color: transparent;
+	border: 1px solid #ce9797;
+	border-radius: 1000rem;
+	color: #000;
+	font-size: 1.6rem;
+	padding-left: 2.4rem;
+}
+.box-img {
+	background-image: url(images/hero-desktop.jpg);
+	background-size: cover;
+}
+.email-label--focus {
+	transform: translateY(-140%);
+	font-size: 1rem;
+}
+.email:focus {
+	outline: 1px solid #ee8c8c;
+}
+.trash .email:focus,
+.trash .email {
+	outline: 1px solid #ec1c1c;
+	border: 1px solid #ec1c1c;
+}
+@media (max-width: 41em) {
+	.header {
+		position: relative;
+		margin: 3.6rem;
+		transform: initial;
+	}
+	.section {
+		grid-template-columns: 1fr;
+		grid-template-rows: 2fr 3fr;
+	}
+	.box-img {
+		grid-row: 1;
+		background-image: url(images/hero-mobile.jpg);
+	}
+	.container {
+		text-align: center;
+	}
+}
